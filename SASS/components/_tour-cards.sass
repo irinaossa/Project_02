@@ -1,0 +1,137 @@
+.card-tour
+    width: 34rem
+    height: 52rem
+    perspective: 150rem
+    -moz-perspective: 150rem
+    position: relative
+    @include respond(tab-port)
+        width: 70%
+        margin-left: 5rem
+        &:not(:last-child)
+            margin-bottom: 2rem
+    @include respond(phone)
+        height: auto
+        width: 100%
+
+            
+                
+
+    &__side
+        transition: .7s all ease
+        height: 52rem
+        color: white
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        backface-visibility: hidden
+        border-radius: .5rem
+        overflow: hidden
+        @include respond(tab-port)
+            width: 70%
+            margin-left: 5rem
+            &:not(:last-child)
+                margin-bottom: 2rem
+        @include respond(phone)
+            height: auto
+            position: relative
+        &_front
+            background: white
+            box-shadow: $box-shadow
+            @include respond(phone)
+                padding-bottom: 12rem
+                box-shadow: none
+                z-index: 1
+        &_back
+            background: linear-gradient(120deg,$color-brown-light,$color-brown-dark)
+            transform: rotateY(180deg)
+            box-shadow: $box-shadow
+            @include respond(phone)
+                transform: rotateY(0deg)
+                padding: 5rem
+                padding-top: 12rem
+                clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%)  
+                margin-top: -12rem 
+                z-index: 2
+                
+            
+
+
+    &:hover &__side_front
+        transform: rotateY(-180deg)
+        @include respond(phone)
+                transform: rotateY(0deg)
+    &:hover &__side_back
+        transform: rotateY(0deg)
+
+    &__img
+        height: 21rem
+        background-blend-mode: hard-light
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
+        &_1
+            background: $color-brown-light url(../img/tour1.jpg) center/ cover no-repeat
+        &_2
+            background: $color-brown-light url(../img/tour2.jpg) center/ cover no-repeat
+        &_3
+            background: $color-brown-light url(../img/tour3.jpg) center/ cover no-repeat
+        
+    &__title
+        font-size: 2.8rem
+        letter-spacing: .2rem
+        font-weight: 300
+        text-align: right
+        position: absolute
+        top: 17rem
+        right: 0rem
+
+    &__span
+        background: linear-gradient(90deg,$color-brown-light,$color-brown-dark)
+        padding: 1rem 2rem .3rem 2rem
+        &_1
+        &_2
+            position: absolute
+            top: 3.4rem
+            right: 0rem
+            padding-bottom: 1rem
+            padding-top: .3rem
+
+    &__desc
+        ul
+            list-style: none
+            margin: 0 auto
+            width: 75%
+            text-align: center
+            li
+                font-size: $font-size
+                letter-spacing: .2rem
+                color: $color-gray
+                border-bottom: .1rem solid $color-gray
+                display: inline-block
+                &:not(:last-child)
+                    margin-bottom: 2rem
+
+
+    &__backSide-box
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        @include respond(phone)
+            position: relative
+            top: 0%
+            left: 0%
+            transform: translate(0%,0%)
+            text-align: center
+    &__text
+        margin-bottom: 8rem
+        color: $color-white
+        letter-spacing: .2rem
+        text-transform: uppercase
+        text-align: center
+        &_1
+            font-size: 2rem
+            font-weight: 300
+        &_2
+            font-size: 6rem
+            font-weight: 500
+

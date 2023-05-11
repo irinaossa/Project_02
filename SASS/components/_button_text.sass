@@ -1,0 +1,27 @@
+.btn-text
+    @include respond(phone)
+        margin-top: 85%
+        width: 50%
+        text-align: center
+        margin-left: 10rem
+        
+    &:link,&:visited
+        font-size: $font-size
+        letter-spacing: .2rem
+        font-weight: 700
+        color: $color-brown-light
+        text-decoration: none
+        padding: 1rem
+        border-bottom: .1rem $color-brown-dark solid
+        display: inline-block
+        transition: .5s all
+        
+    &:active
+        transform: translateY(0rem)
+
+    &:hover
+        background-color: $color-brown-light
+        color: $color-white
+        box-shadow: $box-shadow
+        transform: translateY(-.2rem)
+       
